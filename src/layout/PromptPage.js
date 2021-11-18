@@ -1,22 +1,23 @@
-import React, { useContext, useEffect, useMemo } from 'react';
+import React, { useContext } from 'react';
 import {AuthContext} from '../Provider'
 
 
 function PromptPage() {
-    const {numberOfBoxesRow,numberOfBoxesColumn,marioPosition,setColumn,setRow,setStates} = useContext(AuthContext)
+
+    const {setColumn,setRow,setStates} = useContext(AuthContext)
     const prompter =()=> {
         var row = prompt('width')
         var column = prompt('height')
         setRow(Number(row))
         setColumn(Number(column))
         setStates(true)
+       
 }
-    useEffect(() => {
-       prompter()
-   }, [])
+
     return (
-        <div>
-            
+        <div style={{display:'flex',justifyContent:"center",alignItems:'center',flexDirection:'column'}} >
+            <h1>Maze Problem</h1>
+            <button onClick={prompter} >New Game</button>
         </div>
     )
 }

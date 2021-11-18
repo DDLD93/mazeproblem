@@ -4,8 +4,8 @@ import React, { createContext, useState,} from 'react';
 export const AuthContext = createContext()
 
 function AuthContextProvider ({ children }) {
-    const [numberOfBoxesRow, setnumberOfBoxesRow] = useState(0) // board width
-    const [numberOfBoxesColumn, setnumberOfBoxesColumn] = useState(0) // board heigth
+    const [numberOfBoxesRow, setnumberOfBoxesRow] = useState(null) // board width
+    const [numberOfBoxesColumn, setnumberOfBoxesColumn] = useState(null) // board heigth
     const [state, setstate] = useState(false)
 
     const setRow=(e) => setnumberOfBoxesRow(e)

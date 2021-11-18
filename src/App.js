@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import {AuthContext} from './Provider'
 import './App.css';
 import TableArea from './layout/TableArea';
@@ -10,12 +10,12 @@ import {
 } from "react-router-dom";
 
 function App() {
-  const {state} = useContext(AuthContext)
+  const {state,numberOfBoxesRow,numberOfBoxesColumn} = useContext(AuthContext)
   return (
     <div className="App">
 <Router> 
   <Switch>
-    <Route exact path="/" component={!state?PromptPage:TableArea} />
+    <Route exact path="/" component={numberOfBoxesRow && numberOfBoxesColumn?TableArea:PromptPage} />
   </Switch>  
 </Router>
     </div>
